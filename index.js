@@ -52,26 +52,50 @@ const enableBoxs = ()=>{
     }
 } 
 
-// for showing winner of the game 
-const showWinner = (winner)=>{
+// for showing winner of the game  
+let draw =  false;
+const showWinner = (winner)=>{ 
+    if(!draw){
     msg.innerHTML = `Congratulations , winner is ${winner}`
     msgContainer.classList.remove("hide"); 
-    disableBoxs();  
-
+    disableBoxs(); 
+    }else{
+        msg.innerHTML = `Game is draw, please play again`
+        msgContainer.classList.remove("hide"); 
+        disableBoxs(); 
+    }
+ 
 }
-// for checking winner 
+// for checking winner  
+
 const checkWinner = ()=>{
     for(let pattern of winnersPatterns){
         let val1 = boxes[pattern[0]].innerText;
         let val2 = boxes[pattern[1]].innerText;
         let val3 = boxes[pattern[2]].innerText; 
          if(val1 != "" &&val2 != "" && val3 != ""){
-         if(val1 === val2 && val2 === val3){
-         showWinner(val1);
-        } 
+         if(val1 === val2 && val2 === val3){ 
+         showWinner(val1); 
+         return;
+        }
         }
         
+    } 
+
+   // If no winner is found in any pattern, check for a draw
+    let isDraw = true;
+    for (let box of boxes) {
+        if (box.innerText === "") {
+            isDraw = false;
+            break;
+        }
     }
+
+    if (isDraw) {
+        draw = true;
+        showWinner("Draw");
+    }
+   
 } 
  
 newgameBtn.addEventListener("click", resetGame);
