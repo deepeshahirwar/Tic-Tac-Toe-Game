@@ -20,7 +20,8 @@ h1{
     flex-direction: column;
    
 }  
-.game{
+.game{ 
+    margin-top:4rem;
     height: 60vmin; 
     width: 60vmin;  
     display: flex; 
