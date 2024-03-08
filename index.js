@@ -22,6 +22,7 @@ boxes.forEach((box)=>{
    box.addEventListener("click" ,()=>{
     if(turnO){
      box.innerHTML = "O"; 
+     box.style.color = "white";
      turnO = false;
     }else{
         box.innerHTML = "X";   
@@ -60,7 +61,7 @@ const showWinner = (winner)=>{
     msgContainer.classList.remove("hide"); 
     disableBoxs(); 
     }else{
-        msg.innerHTML = `Game is draw, please play again`
+        msg.innerHTML = `Game is ${winner}, play again`
         msgContainer.classList.remove("hide"); 
         disableBoxs(); 
     }

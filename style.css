@@ -9,13 +9,15 @@ body{
    text-align: center;
 }  
 h1{
-    color: rgba(128, 16, 16, 0.835);
+    color: #ffffffd5;
 }
-.container{ 
+.container{  
+    margin-top: 3rem;
     height: 70vh;  
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;  
+    flex-direction: column;
    
 }  
 .game{
@@ -37,7 +39,8 @@ h1{
     font-size:8vmin; 
     background: #000;
 } 
-.resetBtn{ 
+.resetBtn{  
+    margin-top: 2rem;
     padding:  8px;
     height: 2.5rem;
     width: 9rem; 
@@ -56,6 +59,8 @@ h1{
     color: #fff;  
     border-radius: 8px;
     border: none; 
+    margin-top: 1rem;
+    margin-bottom: 1rem; 
 } 
 .msg{
     color: rgba(7, 237, 7, 0.945); 
